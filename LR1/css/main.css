@@ -1,0 +1,42 @@
+.header {
+    display: block;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    top: auto;
+    left: auto;
+    padding: 0;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+}
+
+.header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+body {
+    min-width: 320px;
+    min-height: 100%;
+    font-family: MuseoSansCyrl,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #3a3a3a;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+.header__geo{
+    padding-left: 0%;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
