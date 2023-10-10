@@ -1,43 +1,20 @@
 .header {
-    width: 100%;
     border-bottom: 1px solid #e6e6e6;
     background-color: #fff;
 }
 
 .topline-row{
     background-color: #eaeaea;
-    width: 100%;
-}
-.topline-row.container{
-    background-color: #eaeaea;
-    padding-right: 20%;
-    padding-left: 20%;
-}
-.topline-menu{
-    width: 100%;
 }
 
-.topline-buttons{
-    width: 100%;
-}
 .topline-buttons li{
     display: inline-block;
     padding: 14px;
     font-size: 13px;
 }
 
-.header__logo{
-    margin:9px auto 5px;
-    padding-bottom:20px ;
-}
-
-.header__search{
-    margin:20px auto;
-}
-
 .search-input:after {content:""; clear:both; display:table}
 .search-input{
-    width: 100%;
     margin: 0 auto;
 }
 .search-input input {
@@ -104,8 +81,6 @@ a {
 }
 
 .main-menu {
-    padding-left: 20%;
-    padding-right: 20%;
     border-bottom: 1px solid #e6e6e6;
 }
 
