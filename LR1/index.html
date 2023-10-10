@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<div class="topline-row">
-    <div class="container">
+<div class="topline-row row">
+    <div class="container col-9">
         <div class="topline-menu">
             <ul class="topline-buttons row-cols-auto">
                 <li class="col"><a href="#">Распродажа</a></li>
@@ -27,22 +27,24 @@
     </div>
 </div>
 
-<header class="header">
-    <div class="header__row row">
-        <div class="header__logo col-3">
-            <a href="/"><img width="240" alt="велосипед" src="img/logo.svg"></a>
-        </div>
-        <div class="header__search col-4">
-            <form class="search-input position-relative" action="" method="get">
-                <input type="search" placeholder="Я ищу...">
-                <button class="position-absolute top-0 end-0" type="submit"></button>
-            </form>
-        </div>
-        <div class="header__geo col-5">
-            <div class="row">
-                <div class="city col"><a href="#">Волгоград</a></div>
-                <div class="shops col">
-                    <a href="#">Пункт самовывоза: 400075, Волгоградская обл, Волгоград г, Моторная (Рабочий поселок Гумрак тер.) ул, дом № 9, Г</a>
+<header class="header row">
+    <div class="container-fluid col-9">
+        <div class="header__row row container">
+            <div class="header__logo col-3">
+                <a href="/"><img width="240" alt="велосипед" src="img/logo.svg"></a>
+            </div>
+            <div class="header__search col-4">
+                <form class="search-input position-relative" action="" method="get">
+                    <input type="search" placeholder="Я ищу...">
+                    <button class="position-absolute top-0 end-0" type="submit"></button>
+                </form>
+            </div>
+            <div class="header__geo col-5">
+                <div class="row">
+                    <div class="city col"><a href="#">Волгоград</a></div>
+                    <div class="shops col">
+                        <a href="#">Пункт самовывоза: 400075, Волгоградская обл, Волгоград г, Моторная (Рабочий поселок Гумрак тер.) ул, дом № 9, Г</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,16 +52,59 @@
 </header>
 
 <div class="main-menu">
-    <div class="container-fluid">
+    <div class="container">
             <ul class="catalog-menu_list row-cols-auto">
-                <li class="col align-middle"><a class="container-fluid" href="#">Велосипеды</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Аксессуары</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Запчасти</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Экипировка</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Инструменты</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Самокаты</a></li>
-                <li class="col align-middle"><a class="container-fluid" href="#">Веломастерская</a></li>
+                <li class="col align-middle"><a class="container" href="#">Велосипеды</a></li>
+                <li class="col align-middle"><a class="container" href="#">Аксессуары</a></li>
+                <li class="col align-middle"><a class="container" href="#">Запчасти</a></li>
+                <li class="col align-middle"><a class="container" href="#">Экипировка</a></li>
+                <li class="col align-middle"><a class="container" href="#">Инструменты</a></li>
+                <li class="col align-middle"><a class="container" href="#">Самокаты</a></li>
+                <li class="col align-middle"><a class="container" href="#">Веломастерская</a></li>
             </ul>
+    </div>
+</div>
+
+<div class="page-content row">
+    <div class="container-fluid col-9">
+        <ol class="breadcrumb" itemscope="itemscope">
+            <li class="breadcrumb-item">
+                <a href="/">Главная</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/cube/">Cube</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/cube/2023/">2023</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <span>Горный велосипед Cube Aim Pro 29 (2023)</span>
+            </li>
+        </ol>
+    </div>
+    <div class="productfull row">
+        <div class="container-fluid col-9">
+            <div class="productfull-header">
+                <div class="productfull-header-main row justify-content-between">
+                    <div class="productfull-header-title d-flex flex-row col-8">
+                        <h2>Горный велосипед Cube Aim Pro 29 (2023)</h2>
+                        <span class="pt-2 ps-1">Нет в наличии</span>
+                    </div>
+                    <div class="productfull-header-right col-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+                            <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                        </svg>
+                        <img src="img/cube.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="productfull-row-top"></div>
+            <div class="productfull-short-summary"></div>
+            <div class="productfull-feature"></div>
+        </div>
     </div>
 </div>
 
