@@ -95,5 +95,22 @@ a {
     color: gray;
 }
 
+.old-price{
+    font-size: 20px;
+    color: #8a8a8a;
+}
+.curr-price{
+    font-size: 46px;
+    color: #8a8a8a;
+}
+.availability{
+    color: #8a8a8a;
+}
+.buy-btn{
+    border:2px solid #0093ff;
+    box-shadow: 0 5px 8px rgba(47,114,155,.2);
+    border-radius: 24px;
+}
+
 
 
