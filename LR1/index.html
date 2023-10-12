@@ -17,8 +17,8 @@
     <div class="container-fluid col-9">
         <div class="topline-menu">
             <ul class="topline-buttons row-cols-auto ps-0 mb-0">
-                <li class="col ps-0"><a href="#">Распродажа</a></li>
-                <li class="col"><a href="#">Акции</a></li>
+                <li class="col ps-0"><a class="fw-bold" href="#" style="color: #0093ff">Распродажа</a></li>
+                <li class="col"><a class="fw-bold" href="#" style="color: #0093ff">Акции</a></li>
                 <li class="col"><a href="#" style="color: inherit">Контакты</a></li>
                 <li class="col"><a href="#" style="color: inherit">Покупателям</a></li>
                 <li class="col"><a href="#" style="color: inherit">Доставка и оплата</a></li>
@@ -42,9 +42,9 @@
             </div>
             <div class="col-5">
                 <div class="row">
-                    <div class="city col"><a href="#">Волгоград</a></div>
+                    <div class="city col"><a href="#" style="color: #0093ff">Волгоград</a></div>
                     <div class="shops col">
-                        <a href="#">Пункт самовывоза: 400075, Волгоградская обл, Волгоград г, Моторная (Рабочий поселок
+                        <a href="#" style="color: #0093ff">Пункт самовывоза: 400075, Волгоградская обл, Волгоград г, Моторная (Рабочий поселок
                             Гумрак тер.) ул, дом № 9, Г</a>
                     </div>
                 </div>
@@ -64,17 +64,17 @@
                 <li class="col"><a class="px-3" href="#">Самокаты</a></li>
                 <li class="col"><a class="px-3" href="#">Веломастерская</a></li>
             </ul>
-            <div class="col-1 text-end">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+            <div class="col-1 text-end d-flex flex-row justify-content-around align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#43aeff"
                      class="bi bi-bar-chart" viewBox="0 0 16 16">
                     <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#43aeff"
                      class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                           d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#43aeff"
                      class="bi bi-cart-fill" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>
@@ -86,7 +86,7 @@
     <div class="page-content">
         <div class="row justify-content-center">
             <div class="col-9 pt-3">
-                <ol class="breadcrumb" itemscope="itemscope">
+                <ol class="breadcrumb">
                     <li class="breadcrumb-item">
                         <a href="/">Главная</a>
                     </li>
@@ -202,7 +202,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="productfull-short-summary w-100">
+                <div class="productfull-short__summary w-100">
                     Велосипед Cube Aim Pro 29 (2023) скоро будет в наличии с доставкой по Волгограду. В наличии есть
                     похожая модель 2022 года по цене 48 990 руб. Гарантия: 12 месяцев
                 </div>
@@ -213,6 +213,212 @@
                     <div class="productfull-feature__item">16 скоростей</div>
                     <div class="productfull-feature__item">Задний переключатель Shimano Acera</div>
                 </div>
+                <div class="carousel-swiper w-100">
+                    <div class="carousel-swiper__header">
+                        <h2 class="carousel-swiper__title">Похожие товары в наличии</h2>
+                        <div class="carousel-swiper__nav">
+                            <div class="carousel-swiper__button_prev carousel-swiper__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                </svg>
+                            </div>
+                            <div class="carousel-swiper__button_next carousel-swiper__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-swiper__list">
+                        <div class="carousel-swiper__wrapper">
+                            <div class="carousel-swiper__item">
+                                <div class="product-card">
+                                    <div class="product-card__top">
+                                        <div class="product-card__label_sale">SALE</div>
+                                        <div class="product-card__label_youtube">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__imagebox">
+                                        <img class="product-card__img" src="img/product1.jpg">
+                                    </div>
+                                    <div class="product-card__main">
+                                        <div class="product-card__title">
+                                            <div class="product-card__category">Горный велосипед</div>
+                                            <div class="product-card__model">Aspect Stimul 27.5 (2023)</div>
+                                        </div>
+                                        <div class="product-card__bottom">
+                                            <div class="product-card__pricebox_top">
+                                                <div class="product-card__price_old text-decoration-line-through">55 990</div>
+                                                <div class="product-card__sale">-6%</div>
+                                            </div>
+                                            <div class="product-card__pricebox_bottom">
+                                                <div class="product-card__pricebox_main">
+                                                    <div class="product-card__price">52 490 ₽</div>
+                                                    <div class="product-card__availability">В наличии</div>
+                                                </div>
+                                                <div class="product-card__buy">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#6cc038"
+                                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-swiper__item">
+                                <div class="product-card">
+                                    <div class="product-card__top">
+                                        <div class="product-card__label_sale">SALE</div>
+                                        <div class="product-card__label_youtube">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__imagebox">
+                                        <img class="product-card__img" src="img/product1.jpg">
+                                    </div>
+                                    <div class="product-card__main">
+                                        <div class="product-card__title">
+                                            <div class="product-card__category">Горный велосипед</div>
+                                            <div class="product-card__model">Atom XTrail X10 (2023)</div>
+                                        </div>
+                                        <div class="product-card__bottom">
+                                            <div class="product-card__pricebox_top">
+                                                <div class="product-card__price_old text-decoration-line-through">76 775</div>
+                                                <div class="product-card__sale">-25%</div>
+                                            </div>
+                                            <div class="product-card__pricebox_bottom">
+                                                <div class="product-card__pricebox_main">
+                                                    <div class="product-card__price">57 581 ₽</div>
+                                                    <div class="product-card__availability">В наличии</div>
+                                                </div>
+                                                <div class="product-card__buy">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#6cc038"
+                                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-swiper__item">
+                                <div class="product-card">
+                                    <div class="product-card__top">
+                                        <div class="product-card__label_sale">SALE</div>
+                                    </div>
+                                    <div class="product-card__imagebox">
+                                        <img class="product-card__img" src="img/product1.jpg">
+                                    </div>
+                                    <div class="product-card__main">
+                                        <div class="product-card__title">
+                                            <div class="product-card__category">Горный велосипед</div>
+                                            <div class="product-card__model">Bergamont Revox 2 29" (2022)</div>
+                                        </div>
+                                        <div class="product-card__bottom">
+                                            <div class="product-card__pricebox_top">
+                                                <div class="product-card__price_old text-decoration-line-through">71 240</div>
+                                                <div class="product-card__sale">-20%</div>
+                                            </div>
+                                            <div class="product-card__pricebox_bottom">
+                                                <div class="product-card__pricebox_main">
+                                                    <div class="product-card__price">56 995 ₽</div>
+                                                    <div class="product-card__availability">В наличии</div>
+                                                </div>
+                                                <div class="product-card__buy">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#6cc038"
+                                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-swiper__item">
+                                <div class="product-card">
+                                    <div class="product-card__top">
+                                        <div class="product-card__label_sale">SALE</div>
+                                        <div class="product-card__label_youtube">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#ffffff" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="product-card__imagebox">
+                                        <img class="product-card__img" src="img/product1.jpg">
+                                    </div>
+                                    <div class="product-card__main">
+                                        <div class="product-card__title">
+                                            <div class="product-card__category">Горный велосипед</div>
+                                            <div class="product-card__model">Format 1315 (2023)</div>
+                                        </div>
+                                        <div class="product-card__bottom">
+                                            <div class="product-card__pricebox_top">
+                                                <div class="product-card__price_old text-decoration-line-through">57 050</div>
+                                                <div class="product-card__sale">-10%</div>
+                                            </div>
+                                            <div class="product-card__pricebox_bottom">
+                                                <div class="product-card__pricebox_main">
+                                                    <div class="product-card__price">51 340 ₽</div>
+                                                    <div class="product-card__availability">В наличии</div>
+                                                </div>
+                                                <div class="product-card__buy">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#6cc038"
+                                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-swiper__item">
+                                <div class="product-card">
+                                    <div class="product-card__top">
+                                        <div class="product-card__label_sale">SALE</div>
+                                    </div>
+                                    <div class="product-card__imagebox">
+                                        <img class="product-card__img" src="img/product1.jpg">
+                                    </div>
+                                    <div class="product-card__main">
+                                        <div class="product-card__title">
+                                            <div class="product-card__category">Горный велосипед</div>
+                                            <div class="product-card__model">Stark Tactic 27.5 + HD (2023)</div>
+                                        </div>
+                                        <div class="product-card__bottom">
+                                            <div class="product-card__pricebox_top">
+                                                <div class="product-card__price_old text-decoration-line-through">57 390</div>
+                                                <div class="product-card__sale">-5%</div>
+                                            </div>
+                                            <div class="product-card__pricebox_bottom">
+                                                <div class="product-card__pricebox_main">
+                                                    <div class="product-card__price">54 650 ₽</div>
+                                                    <div class="product-card__availability">В наличии</div>
+                                                </div>
+                                                <div class="product-card__buy">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#6cc038"
+                                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -220,9 +426,6 @@
     </div>
 </div>
 
-<div class="footer">
-    asdad
-</div>
 
 
 <script src="https://kit.fontawesome.com/f6659f06c3.js" crossorigin="anonymous"></script>
