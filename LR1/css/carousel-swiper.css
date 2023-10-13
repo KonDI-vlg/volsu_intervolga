@@ -13,8 +13,7 @@
 }
 
 .carousel-swiper__nav{
-    display: flex;
-    gap: 10px
+    margin: 0;
 }
 
 .carousel-swiper__button{
@@ -48,5 +47,9 @@
 }
 
 .carousel-swiper__wrapper{
+
+}
+
+.carousel-swiper__slide_first{
     display: flex;
 }
