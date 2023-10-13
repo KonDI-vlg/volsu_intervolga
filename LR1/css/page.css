@@ -3,8 +3,6 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     font-family: MuseoSansCyrl, Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -12,36 +10,34 @@ body {
     color: #3a3a3a;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
 .topline-row {
     background-color: #eaeaea;
 }
 
-.topline-buttons li {
-    display: inline-block;
+.topline-buttons li{
+    display: inline-flex;
     padding: 14px;
     font-size: 13px;
 }
-
-.search-input:after {
-    content: "";
-    clear: both;
-    display: table
+.topline-buttons li:nth-child(1):nth-child(2) a {
+    color: #0093ff;
 }
 
-.search-input {
-    margin: 0 auto;
+.topline-buttons li:nth-child(n+3) a {
+    color: inherit;
 }
+
+
 
 .search-input input {
     width: 100%;
     height: 42px;
     padding-left: 15px;
     border-radius: 42px;
-    border: 3px solid #ffbc00;
     outline: none;
+    border: 3px solid #ffbc00;
     position: relative;
     transition: .3s linear;
 }
@@ -64,28 +60,20 @@ body {
     height: 42px;
     border: none;
     background: none;
-
-}
-
-.search-input button:before {
-    content: "\f002";
-    font-family: FontAwesome;
-    font-size: 16px;
 }
 
 .city a {
+    display: flex;
     margin: 30px auto;
     padding-left: 40px;
-    display: block;
     font-size: 13px;
 }
 
 .shops a {
-    margin: 10px auto 5px;
     display: block;
+    margin: 10px 0;
     text-align: right;
     font-size: 13px;
-
 }
 
 a {
@@ -127,9 +115,16 @@ a {
     box-shadow: 0 5px 8px rgba(47, 114, 155, .2);
     border-radius: 24px;
 }
+.buy-btn span{
+    color: #000000;
+}
 
 .productfull-short__summary {
     color: #8a8a8a;
     font-size: 12px;
     margin-bottom: 15px;
+}
+
+.productfull-bottom__main{
+    padding-right: 6%; width: calc(100% - 330px);
 }
