@@ -8,10 +8,6 @@
     margin-bottom: 25px;
 }
 
-.carousel-swiper__title{
-
-}
-
 .carousel-swiper__nav{
     margin: 0;
 }
@@ -34,22 +30,7 @@
     transform: translate(-50%,-50%);
 }
 
-.carousel-swiper__button_prev{
-
-}
-
-.carousel-swiper__button_next{
-
-}
-
-.carousel-swiper__list{
-
-}
-
-.carousel-swiper__wrapper{
-
-}
-
 .carousel-swiper__slide{
     display: flex;
+    justify-content: space-between;
 }
