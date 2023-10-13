@@ -13,12 +13,12 @@ class MainSlider{
         this.thumb = new Swiper(this.swiperThumb, {
             spaceBetween: 10,
             slidesPerView: 'auto',
-            loop: true,
+            loop: false,
         });
 
         this.swiper = new Swiper(this.swiperContainer, {
             // Optional parameters
-            loop: true,
+            loop: false,
 
             // Navigation arrows
 
