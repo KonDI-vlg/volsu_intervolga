@@ -1,0 +1,26 @@
+.productfull-feature {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productfull-feature__item{
+    font-size: 13px;
+    color: #3a3a3a;
+}
+.productfull-feature__item:not(:first-child){
+    position: relative;
+    padding-left: 20px;
+    margin-left: 14px;
+}
+
+.productfull-feature__item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    border-radius: 100%;
+    border:2px solid #0093ff;
+}
