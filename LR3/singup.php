@@ -1,12 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 require_once 'logic.php';
-require_once 'header.php';
-require_once 'error.php';
-$valuesFromPost = getValuesFromPost();
-if (isset($_POST['button'])) {
-    addUserInDB($valuesFromPost);
-}
 
 ?>
 
