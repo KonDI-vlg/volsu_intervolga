@@ -39,13 +39,23 @@
                 </form>
             </div>
             <div class="col-5">
-                <div class="shop_location row">
-                    <div class="city col"><a href="#">Волгоград</a></div>
-                    <div class="shops col">
-                        <a href="#">Пункт самовывоза: 400075, Волгоградская обл, Волгоград г, Моторная (Рабочий поселок
-                            Гумрак тер.) ул, дом № 9, Г</a>
+                <div class="shop_location d-flex flex-row justify-content-between">
+                    <div class="city w-50"><a href="#">Волгоград</a></div>
+                    <div class="auth w-50 d-flex flex-row align-items-center">
+                        <a class="login col btn btn btn-outline-primary" href="#">
+                            Войти
+                        </a>
+                        <a class="sign col btn btn-outline-primary" href="singup.php">
+                            Зарегистрироваться
+                        </a>
                     </div>
                 </div>
+            </div>
+            <div class="auth">
+                <div class="login">
+
+                </div>
+                <div class="sign-up"></div>
             </div>
         </div>
     </div>

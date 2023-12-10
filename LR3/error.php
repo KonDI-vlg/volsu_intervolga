@@ -1,5 +1,5 @@
 <?php
-    $fields = ['email','birth','FIO','address','gender','interesting','blood','blood_rh'];
+    $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh'];
 
     if (isset($_POST['button'])){
         $errors = [];
