@@ -1,12 +1,13 @@
 <?php
 require_once 'db.php';
-
+session_start();
 
 $SALT = "sanya_shedrin_molodec";
 
+$valuesFromPost = getValuesFromPost();
 
-function checkErrors($input_data):bool {
-    $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh','password','password1'];
+function checkErrors($input_data): array {
+    $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh','password','password_compare'];
     $error_text = [
         'email' => 'Не указана электронная почта',
         'birth' => 'Не указана дата рождения',
@@ -17,20 +18,19 @@ function checkErrors($input_data):bool {
         'interesting' => 'Не указана интересная информация',
         'blood' => 'Не указана группа крови',
         'blood_rh' => 'Не указан резус фактор крови',
-        'password' => 'Не указан пароль'
+        'password' => 'Не указан пароль',
+        'password_compare' => 'Подтвердите пароль'
     ];
-     $error_input = false;
+     $error_output = array();
      foreach ($fields as $field){
          if(empty($_POST[$field])){
-             $error_input = true;
-             ?>
-             <div class="alert alert-danger" role="alert">
-                <?= $error_text[$field] ?>
-            </div>
-            <?php
+             $error_output[] = $error_text[$field];
          }
      }
-    return $error_input;
+     if($input_data['password'] !== $input_data['password_compare'])
+         $error_output[] = "Пароли не совпадают";
+
+    return $error_output;
 }
 function getValuesFromPost(): array {
     $defaultValues = [
@@ -43,7 +43,8 @@ function getValuesFromPost(): array {
         'gender' => '',
         'blood' => '',
         'blood_rh' => '',
-        'password' => ''
+        'password' => '',
+        'password1' => ''
     ];
     foreach ($_POST as $key => $value) {
         $defaultValues[$key] = htmlspecialchars($value);
@@ -76,7 +77,7 @@ function addUserInDB($user_data) {
     $stmt = $db->prepare($sql);
     $stmt->execute($register_data);
 
-    header('login.php');
+    header('Location:login.php');
 
     exit();
 }
@@ -88,7 +89,13 @@ function vardump($var) {
 
 
 if (isset($_POST['button'])) {
-    if(!checkErrors(getValuesFromPost()))
-        addUserInDB(getValuesFromPost());
+    $error_output = checkErrors($valuesFromPost);
+    if($error_output == null){
+        addUserInDB($valuesFromPost);
+    }
+    else{
+        $_SESSION['errors'] = $error_output;
+        Header("Location:singup.php");
+    }
 }
 
