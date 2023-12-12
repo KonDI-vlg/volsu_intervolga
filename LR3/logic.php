@@ -4,6 +4,34 @@ require_once 'db.php';
 
 $SALT = "sanya_shedrin_molodec";
 
+
+function checkErrors($input_data):bool {
+    $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh','password','password1'];
+    $error_text = [
+        'email' => 'Не указана электронная почта',
+        'birth' => 'Не указана дата рождения',
+        'FIO' => 'Не указано ФИО',
+        'address' => 'Не указан адрес',
+        'gender' => 'Не указан пол',
+        'vk' => 'Не указана ссылка на ВК',
+        'interesting' => 'Не указана интересная информация',
+        'blood' => 'Не указана группа крови',
+        'blood_rh' => 'Не указан резус фактор крови',
+        'password' => 'Не указан пароль'
+    ];
+     $error_input = false;
+     foreach ($fields as $field){
+         if(empty($_POST[$field])){
+             $error_input = true;
+             ?>
+             <div class="alert alert-danger" role="alert">
+                <?= $error_text[$field] ?>
+            </div>
+            <?php
+         }
+     }
+    return $error_input;
+}
 function getValuesFromPost(): array {
     $defaultValues = [
         'FIO' => '',
@@ -60,6 +88,7 @@ function vardump($var) {
 
 
 if (isset($_POST['button'])) {
-    addUserInDB(getValuesFromPost());
+    if(!checkErrors(getValuesFromPost()))
+        addUserInDB(getValuesFromPost());
 }
 

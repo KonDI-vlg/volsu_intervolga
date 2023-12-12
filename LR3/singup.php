@@ -109,17 +109,3 @@ require_once 'logic.php';
 
 </div>
 
-<?php
-    $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh'];
-
-    if (isset($_POST['button'])){
-     $errors = [];
-     foreach ($fields as $field){
-         if(empty($_POST[$field])){
-             $errors[] = $field;
-
-         }
-     }
-}
-
-    ?>
