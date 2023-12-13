@@ -6,6 +6,7 @@ $valuesFromPost = getValuesFromPost();
 
 function checkErrors($input_data): array {
     $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh','password','password_compare'];
+    $password_pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_ !@#$%^&*()+,])[a-zA-Z\d!@#$%^&*()+,\-_\s]{6,}$/';
     $error_text = [
         'email' => 'Не указана электронная почта',
         'birth' => 'Не указана дата рождения',
@@ -25,8 +26,16 @@ function checkErrors($input_data): array {
              $error_output[] = $error_text[$field];
          }
      }
-     if($input_data['password'] !== $input_data['password_compare'])
+    if(!preg_match($password_pattern,$input_data['password']))
+        $error_output[] = " <ul>Слишком легкий пароль<br>Требования к паролю: </ul> 
+                       <li>Длиннее 6 символов</li>
+                       <li>Содержит как большие, так и маленькие латинские буквы</li>
+                       <li>Минимум 1 специальный символ</li>
+                       <li>Только латинские буквы</li>
+                       ";
+    else if($input_data['password'] !== $input_data['password_compare'])
          $error_output[] = "Пароли не совпадают";
+
 
     return $error_output;
 }
@@ -97,5 +106,8 @@ else if (isset($_POST['button'])) {
     else{
         $_SESSION['errors'] = $error_output;
     }
+}
+else if (!debug_backtrace()){
+    Header("Location:sign_up.php");
 }
 

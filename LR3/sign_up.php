@@ -2,8 +2,8 @@
 session_start();
 error_reporting(E_ERROR | E_PARSE);
 
-require_once 'sign_up_logic.php';
 require_once 'header.php';
+require_once 'sign_up_logic.php';
 
 ?>
 
