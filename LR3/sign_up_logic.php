@@ -86,7 +86,10 @@ function vardump($var) {
 }
 
 
-if (isset($_POST['button'])) {
+if(isset($_SESSION['user_id'])){
+    Header("Location:secret_page.php");
+}
+else if (isset($_POST['button'])) {
     $error_output = checkErrors($valuesFromPost);
     if($error_output == null){
         addUserInDB($valuesFromPost);
