@@ -41,21 +41,20 @@
             <div class="col-5">
                 <div class="shop_location d-flex flex-row justify-content-between">
                     <div class="city w-50"><a href="#">Волгоград</a></div>
-                    <div class="auth w-50 d-flex flex-row align-items-center">
-                        <a class="login col btn btn btn-outline-primary" href="#">
+                    <?php
+                        if(!isset($_SESSION['user_id'])): ?>
+                    <div class="auth w-50 d-flex flex-row align-items-center gap-2">
+                        <a class="login col btn btn btn-outline-primary" href="login.php">
                             Войти
                         </a>
-                        <a class="sign col btn btn-outline-primary" href="singup.php">
+                        <a class="sign col btn btn-outline-primary" href="sign_up.php">
                             Зарегистрироваться
                         </a>
                     </div>
+                        <?php
+                        endif;
+                    ?>
                 </div>
-            </div>
-            <div class="auth">
-                <div class="login">
-
-                </div>
-                <div class="sign-up"></div>
             </div>
         </div>
     </div>

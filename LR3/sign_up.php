@@ -1,23 +1,24 @@
 <?php
 session_start();
 error_reporting(E_ERROR | E_PARSE);
-require_once 'logic.php';
-include 'header.php';
+
+require_once 'sign_up_logic.php';
+require_once 'header.php';
+
 ?>
 
 <div style="text-align:center;margin-top:50px;" class="container">
     <?php
-    if(isset($_SESSION['errors'])){
-        foreach ($_SESSION['errors'] as $err){
-            ?>
+    if(isset($_SESSION['errors'])):
+        foreach ($_SESSION['errors'] as $err): ?>
             <div class="alert alert-danger" role="alert">
                 <?= $err ?>
             </div>
-            <?php
-        }
-    }
+        <?php endforeach;
+        unset($_SESSION['errors']);
+    endif;
     ?>
-    <form method="post" action="logic.php">
+    <form action="sign_up.php" method="post">
         <div class="row g-4">
             <div class="col-6 ">
                 <label for="exampleFormControlInput2" class="form-label">Ф.И.О.</label>

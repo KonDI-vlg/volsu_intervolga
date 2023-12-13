@@ -95,7 +95,6 @@ if (isset($_POST['button'])) {
     }
     else{
         $_SESSION['errors'] = $error_output;
-        Header("Location:singup.php");
     }
 }
 
