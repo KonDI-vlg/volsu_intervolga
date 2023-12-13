@@ -5,6 +5,7 @@ $GLOBALS['salt'] = "sanya_shedrin_molodec";
 
 $valuesFromPost = getValuesFromPost();
 $user = array();
+global $db;
 
 function getValuesFromPost(): array {
     $defaultValues = [
@@ -16,8 +17,7 @@ function getValuesFromPost(): array {
     }
     return $defaultValues;
 }
-function checkErrors($input_data): array
-{
+function checkErrors($input_data): array {
     global $db;
     global $user;
     $error_output = array();
@@ -45,16 +45,18 @@ function checkErrors($input_data): array
 
 function freezeAcc($input_data):bool {
     global $db;
+    global $user;
+
     $curr_time = time();
     $stmt = $db->prepare("SELECT users.last_try_login, users.tries_count FROM users WHERE mail = :login_mail");
-    $stmt->execute(['login_mail' => $input_data['login_mail']]);
+    $stmt->execute(['login_mail' => $user['mail']]);
     $data = $stmt->fetch();
 
     $user_time = intval($data['last_try_login']);
     $user_count = $data['tries_count'];
 
 
-    if($curr_time - $user_time < 3600  and $user_count > 3)
+    if($curr_time - $user_time < 3600  and $user_count >= 3)
         return true;
     else
         return false;
@@ -62,15 +64,22 @@ function freezeAcc($input_data):bool {
 
 function addLoginTry($input_data){
     global $db;
+    global $user;
 
     $stmt = $db->prepare("SELECT users.tries_count FROM users WHERE users.mail = :login_mail");
-    $stmt->execute(['login_mail' => $input_data['login_mail']]);
+    $stmt->execute(['login_mail' => $user['mail']]);
     $data = $stmt->fetch()['tries_count'];
     $data++;
 
     $stmt = $db->prepare("UPDATE users SET tries_count = :new_tries WHERE users.mail = :login_mail");
-    $stmt->execute(['login_mail' => $input_data['login_mail'],
+    $stmt->execute(['login_mail' => $user['mail'],
         'new_tries' => $data]);
+
+    if($data >= 3){
+        $stmt = $db->prepare("UPDATE users SET last_try_login = :last_try WHERE users.mail = :login_mail");
+        $stmt->execute(['login_mail' => $user['mail'],
+            'last_try' => time()]);
+    }
 }
 
 function vardump($var) {
@@ -83,10 +92,16 @@ if(isset($_SESSION['user_id'])){
     Header("Location:secret_page.php");
 }
 else if(isset($_POST['button'])){
+    global $db;
     global $user;
     $error_output = checkErrors($valuesFromPost);
     if($error_output == null){
         $_SESSION['user_id'] = $user['id'];
+
+        $stmt = $db->prepare("UPDATE users SET tries_count = :new_tries WHERE users.mail = :login_mail");
+        $stmt->execute(['login_mail' => $user['mail'],
+            'new_tries' => 0]);
+
         Header("Location:secret_page.php");
     }
     else{

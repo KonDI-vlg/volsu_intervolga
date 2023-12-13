@@ -64,7 +64,7 @@ if(!isset($_SESSION['user_id']))
         <?php foreach ($bikes as $bike):?>
             <tr class="row justify-content-center">
                 <td class="col-2 d-block text-center">
-                    <img height="180" src="<?=htmlspecialchars($bike['img_path'])?>">
+                    <img height="180" src="get_img.php?img=<?= htmlspecialchars($bike['id'])?>">
                 </td>
                 <td class="col-1"><?=htmlspecialchars($bike['name'])?></td>
                 <td class="col-1"><?=htmlspecialchars($bike['type'])?></td>

@@ -5,6 +5,7 @@ $GLOBALS['salt'] = "sanya_shedrin_molodec";
 $valuesFromPost = getValuesFromPost();
 
 function checkErrors($input_data): array {
+    global $db;
     $fields = ['email','birth','FIO','address','gender','vk','interesting','blood','blood_rh','password','password_compare'];
     $password_pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_ !@#$%^&*()+,])[a-zA-Z\d!@#$%^&*()+,\-_\s]{6,}$/';
     $error_text = [
@@ -20,24 +21,32 @@ function checkErrors($input_data): array {
         'password' => 'Не указан пароль',
         'password_compare' => 'Подтвердите пароль'
     ];
+
+    $stmt = $db->prepare("SELECT mail FROM users WHERE mail = :email");
+    $stmt->execute(['email' => $input_data['email']]);
+    $existing_user = $stmt->fetch();
+
      $error_output = array();
      foreach ($fields as $field){
          if(empty($_POST[$field])){
              $error_output[] = $error_text[$field];
          }
      }
-    if(!preg_match($password_pattern,$input_data['password']))
-        $error_output[] = " <ul>Слишком легкий пароль<br>Требования к паролю: </ul> 
-                       <li>Длиннее 6 символов</li>
-                       <li>Содержит как большие, так и маленькие латинские буквы</li>
-                       <li>Минимум 1 специальный символ</li>
-                       <li>Только латинские буквы</li>
-                       ";
-    else if($input_data['password'] !== $input_data['password_compare'])
-         $error_output[] = "Пароли не совпадают";
+     if($existing_user){
+         $error_output[] = "Пользователь с такой электронной почтой уже зарегистрирован";
+     }
+     elseif(!preg_match($password_pattern,$input_data['password']))
+         $error_output[] = " <ul>Слишком легкий пароль<br>Требования к паролю: </ul> 
+                        <li>Длиннее 6 символов</li>
+                        <li>Содержит как большие, так и маленькие латинские буквы</li>
+                        <li>Минимум 1 специальный символ</li>
+                        <li>Только латинские буквы</li>
+                        ";
+     elseif($input_data['password'] !== $input_data['password_compare'])
+          $error_output[] = "Пароли не совпадают";
 
 
-    return $error_output;
+     return $error_output;
 }
 function getValuesFromPost(): array {
     $defaultValues = [

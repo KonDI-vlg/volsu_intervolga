@@ -9,7 +9,8 @@ if(!isset($_SESSION['user_id']))
 function getBikesFromDb(): array{
     global $db;
     $sql =
-        'SELECT bikes.name as name,
+        'SELECT bikes.id,
+        bikes.name as name,
         types.type as type,
         bikes.img_path,
         bikes.description,
