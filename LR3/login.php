@@ -1,7 +1,7 @@
 <?php
 
 require_once('header.php');
-
+require_once('login_logic.php');
 ?>
 
 <div style="text-align:center;margin-top:50px;" class="container">
@@ -24,7 +24,7 @@ require_once('header.php');
             </div>
             <div class="col-4">
                 <label for="exampleFormControlInput2" class="form-label">Пароль</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" name="login_pass" required
+                <input type="password" class="form-control" id="exampleFormControlInput2" name="login_pass" required
                        value="<?= (isset($_POST['login_pass'])) ? htmlspecialchars($_POST['login_pass']) : "" ?>">
             </div>
 

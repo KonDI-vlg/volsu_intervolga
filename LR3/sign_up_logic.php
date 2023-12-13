@@ -1,9 +1,7 @@
 <?php
 require_once 'db.php';
 session_start();
-
-$SALT = "sanya_shedrin_molodec";
-
+$GLOBALS['salt'] = "sanya_shedrin_molodec";
 $valuesFromPost = getValuesFromPost();
 
 function checkErrors($input_data): array {
@@ -54,7 +52,7 @@ function getValuesFromPost(): array {
 function addUserInDB($user_data) {
     global $db;
     global $SALT;
-    $hashed_password = md5($user_data['password'].$SALT);
+    $hashed_password = md5($user_data['password'].$GLOBALS['salt']);
 
 
     $register_data = [

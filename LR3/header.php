@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <head>
     <meta charset="utf-8">
@@ -43,17 +44,27 @@
                     <div class="city w-50"><a href="#">Волгоград</a></div>
                     <?php
                         if(!isset($_SESSION['user_id'])): ?>
-                    <div class="auth w-50 d-flex flex-row align-items-center gap-2">
-                        <a class="login col btn btn btn-outline-primary" href="login.php">
-                            Войти
-                        </a>
-                        <a class="sign col btn btn-outline-primary" href="sign_up.php">
-                            Зарегистрироваться
-                        </a>
-                    </div>
+                            <div class="auth w-50 d-flex flex-row align-items-center gap-2">
+                                <a class="login col btn btn btn-outline-primary" href="login.php">
+                                    Войти
+                                </a>
+                                <a class="sign col btn btn-outline-primary" href="sign_up.php">
+                                    Зарегистрироваться
+                                </a>
+                            </div>
                         <?php
+                        else: ?>
+                            <div class="auth w-50 d-flex flex-row align-items-center gap-2">
+                                <div>
+                                    Привет! Удачных покупок!
+                                </div>
+                                <a class="sign col btn btn-outline-primary" href="logout.php">
+                                    Выйти
+                                </a>
+                            </div>
+                    <?php
                         endif;
-                    ?>
+                        ?>
                 </div>
             </div>
         </div>
