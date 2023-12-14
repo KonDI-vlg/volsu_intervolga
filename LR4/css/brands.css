@@ -1,0 +1,27 @@
+.brands{
+    margin: 40px 0;
+}
+.brands__title{
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 0 1em;
+}
+.brands__list{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brands__item img{
+    max-height: 30px;
+    filter: grayscale(100%);
+    opacity: .6;
+    transition: all .2s ease;
+}
+
+.brands__item img:hover{
+    filter: none;
+    opacity: 1;
+}
