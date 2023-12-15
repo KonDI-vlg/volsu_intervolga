@@ -2,7 +2,8 @@
 require_once 'header.php';
 require_once 'text_logic.php';
 
-if(isset($_POST['text']))
+$images = [];
+if(isset($_POST['text']) and !empty($_POST['text']))
     $images = print_images($_POST['text']);
 
 global $freqs;
@@ -18,12 +19,12 @@ global $freqs;
                 echo file_get_contents(__DIR__.'/'.$file);
             }
             else{
-                echo htmlspecialchars($_POST['text']);
+                echo (isset($_POST['text'])) ? htmlspecialchars($_POST['text']) : "";
             }
             ?></textarea>
         <button class="btn btn-primary mt-2">Отправить</button>
     </form>
-    <div class="container">
+    <div class="container m-5">
         <h2>Задание 2</h2>
         <div>
             <?php if(isset($_POST['text'])) foreach ($images as $img_src) {
@@ -32,19 +33,19 @@ global $freqs;
         </div>
         <h2>Задание 6</h2>
         <div>
-            <?php if(isset($_POST['text'])) echo punctuation($_POST['text']) ?>
+            <?php if(isset($_POST['text']) and !empty($_POST['text'])) echo punctuation($_POST['text']) ?>
         </div>
         <h2>Задание 15</h2>
         <div>
-            <?php if(isset($_POST['text'])) echo count_words($_POST['text']) ?>
+            <?php if(isset($_POST['text']) and !empty($_POST['text'])) echo count_words($_POST['text']) ?>
         </div>
         <h2>Задание 19</h2>
         <div>
-            <?php if(isset($_POST['text'])) echo clean_html($_POST['text']) ?>
+            <?php if(isset($_POST['text']) and !empty($_POST['text'])) echo clean_html($_POST['text']) ?>
         </div>
         <h2>Изначальный текст с ссылками</h2>
         <div>
-            <?php if(isset($_POST['text'])) echo print_html($_POST['text'],$freqs) ?>
+            <?php if(isset($_POST['text']) and !empty($_POST['text'])) echo print_html($_POST['text'],$freqs) ?>
         </div>
     </div>
 </div>
