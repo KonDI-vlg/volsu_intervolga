@@ -1,0 +1,50 @@
+.specification{
+    margin-top: 40px;
+}
+
+.specification__content-header{
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.specification__class{
+    margin-bottom: 20px;
+}
+.specification__class_title{
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #000000;
+}
+
+.specification__class_desc td{
+    font-size: 14px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+}
+
+.specification__header{
+    width: 300px;
+}
+
+.specification__name{
+    position: relative;
+    color: #8a8a8a;
+    padding-top: 3px;
+    padding-right: 3px;
+}
+
+.specification__name::after{
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to right,#c6c6c6 33%,rgba(198,198,198,0) 0);
+    background-repeat: repeat-x;
+    background-size: 4px 1px;
+    background-position: bottom;
+    left: 0;
+    bottom: 5px;
+    height: 1px;
+    width: 100%;
+}
