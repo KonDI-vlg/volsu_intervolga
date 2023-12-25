@@ -1,5 +1,4 @@
 <?php
-require_once 'logic.php';
 require_once 'BikesTable.php';
 
 BikesTable::DatabaseConnect();
