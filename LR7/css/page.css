@@ -1,0 +1,130 @@
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: MuseoSansCyrl, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #3a3a3a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.topline-row {
+    background-color: #eaeaea;
+}
+
+.topline-buttons li{
+    display: inline-flex;
+    padding: 14px;
+    font-size: 13px;
+}
+.topline-buttons li:nth-child(1):nth-child(2) a {
+    color: #0093ff;
+}
+
+.topline-buttons li:nth-child(n+3) a {
+    color: inherit;
+}
+
+
+
+.search-input input {
+    width: 100%;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    outline: none;
+    border: 3px solid #ffbc00;
+    position: relative;
+    transition: .3s linear;
+}
+
+.search-input input:focus {
+    background: #ffbc00;
+    color: #fff;
+}
+
+.search-input input::placeholder {
+    color: darkgray
+}
+
+.search-input input:focus::placeholder {
+    color: transparent;
+}
+
+.search-input button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: none;
+}
+
+.city a {
+    display: flex;
+    margin: 30px auto;
+    padding-left: 40px;
+    font-size: 13px;
+}
+
+.shops a {
+    display: block;
+    margin: 10px 0;
+    text-align: right;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-menu {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.catalog-menu_list li {
+    display: inline-block;
+    padding-top: 18px;
+}
+
+.catalog-menu_list li a {
+    color: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+}
+
+.old-price {
+    font-size: 20px;
+    color: #8a8a8a;
+}
+
+.curr-price {
+    font-size: 46px;
+    color: #8a8a8a;
+}
+
+.availability {
+    color: #8a8a8a;
+}
+
+.buy-btn {
+    border: 2px solid #0093ff;
+    box-shadow: 0 5px 8px rgba(47, 114, 155, .2);
+    border-radius: 24px;
+}
+.buy-btn span{
+    color: #000000;
+}
+
+.productfull-short__summary {
+    color: #8a8a8a;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.productfull-bottom__main{
+    padding-right: 6%; width: calc(100% - 330px);
+}

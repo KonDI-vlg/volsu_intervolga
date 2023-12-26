@@ -1,0 +1,10 @@
+.header {
+    /*height: 30px;*/
+    /*background: red;*/
+    border-bottom: 1px solid #e6e6e6;
+    background-color: #fff;
+}
+
+.shop_location div a{
+    color: #0093ff;
+}

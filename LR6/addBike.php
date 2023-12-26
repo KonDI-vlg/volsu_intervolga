@@ -16,7 +16,6 @@ if(empty($errors) and !empty($_FILES['setImage'])){
 
 
 <form class='container col-9' method="post" action="addBike.php"  enctype="multipart/form-data">
-
     <?php
     if(isset($_GET['message'])){
         if ($_GET['message'] == 'wrongType')
