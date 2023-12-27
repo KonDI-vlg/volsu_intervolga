@@ -16,6 +16,7 @@ if(empty($errors) and !empty($_FILES['setImage'])){
 
 
 <form class='container col-9' method="post" action="addBike.php"  enctype="multipart/form-data">
+
     <?php
     if(isset($_GET['message'])){
         if ($_GET['message'] == 'wrongType')
@@ -55,7 +56,6 @@ if(empty($errors) and !empty($_FILES['setImage'])){
             <input type="text" class="form-control" placeholder="Стоимость" name="setPrice" value="<?= isset($_POST['setPrice']) ? htmlspecialchars($_POST['setPrice']) : "" ?>" required>
         </div>
         <div class="col-3">
-            <input type="hidden" name="MAX_FILE_SIZE" value="300000">
             <input type="file" class="form-control" placeholder="Фото" name="setImage" value="<?= isset($_POST['setImage']) ? htmlspecialchars($_POST['setImage']) : "" ?>" required>
         </div>
     </div>

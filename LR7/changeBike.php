@@ -2,18 +2,24 @@
 require_once 'header.php';
 require_once 'BikesTable.php';
 
-if(!isset($_GET['id_bike'])){
-    Header("Location:index.php");
-}
-if(isset($_GET['id_bike'])){
-    $bikeInfo = BikesTable::selectBike($_GET['id_bike']);
-}
-
-
-
-$bikes = BikesTable::exportBikes();
 $types = BikesTable::exportTypes();
 
+// Если через $_GET указан несуществующий id, то возвращаем пользователя назад
+if(isset($_GET['id_bike'])){
+    $bikeData = BikesTable::selectBike($_GET['id_bike']);
+    if(empty($bikeData))
+        header("Location:bikes.php");
+}
+
+// Проверяем ошибки после нажатия кнопки
+if(isset($_POST['btn_upd']))
+    $errors = BikesTable::checkErrors($_POST['setName'],$_POST['setType'],$_POST['setDescription'],$_POST['setPrice'],$_FILES['setImage']);
+
+// Если ошибок нет, то обновляем запись в таблице
+if(empty($errors) and !empty($_FILES['setImage'])){
+    $newPhotoPath = BikesTable::renameInputImage($_FILES['setImage']);
+    BikesTable::updateExistingBike($_POST['id_bike'], $newPhotoPath, $_POST['setName'], $_POST['setDescription'], $_POST['setType'], $_POST['setPrice']);
+}
 ?>
 
 
@@ -40,30 +46,30 @@ $types = BikesTable::exportTypes();
         <?php endif ?>
         <div class="row justify-content-center">
             <h1>Редактировать велосипед</h1>
+            <input type="hidden" name="id_bike" value="<?= isset($bikeData['id']) ? htmlspecialchars($bikeData['id']) : $_POST['id_bike'] ?>">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Название" name="setName" value="<?= isset($_POST['setName']) ? htmlspecialchars($_POST['setName']) : "" ?>" required>
+                <input type="text" class="form-control" placeholder="Название" name="setName" value="<?= isset($_GET['id_bike']) ? htmlspecialchars($bikeData['name']) : $_POST['setName'] ?>" required>
             </div>
             <div class="col-2">
                 <select class="form-select" name="setType" required>
                     <option value="">Тип</option>
                     <?php foreach ($types as $type):
                         ?>
-                        <option value="<?= $type['type'] ?>" <?= (isset($_POST['setType']) and $_POST['setType'] == $type['type']) ? " selected" : "" ?>><?=$type['type']?></option>
+                    <option value="<?= $type['type'] ?>" <?= (isset($_GET['id_bike']) and isset($_GET['id_bike']) == $bikeData['id']) ? " selected" : $_POST['setType'] ?>><?=$type['type']?></option>
                     <?php endforeach ?>
                 </select>
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Описание" name="setDescription" value="<?= isset($_POST['id_bike']) ? htmlspecialchars($_POST['setDescription']) : "" ?>" required>
+                <input type="text" class="form-control" placeholder="Описание" name="setDescription" value="<?= isset($_GET['id_bike']) ? htmlspecialchars($bikeData['description']) : $_POST['setDescription'] ?>" required>
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Стоимость" name="setPrice" value="<?= isset($_POST['setPrice']) ? htmlspecialchars($_POST['setPrice']) : "" ?>" required>
+                <input type="text" class="form-control" placeholder="Стоимость" name="setPrice" value="<?= isset($_GET['id_bike']) ? htmlspecialchars($bikeData['price']) : $_POST['setPrice'] ?>" required>
             </div>
             <div class="col-3">
-                <input type="hidden" name="MAX_FILE_SIZE" value="300000">
-                <input type="file" class="form-control" placeholder="Фото" name="setImage" value="<?= isset($_POST['setImage']) ? htmlspecialchars($_POST['setImage']) : "" ?>" required>
+                <input type="file" class="form-control" name="setImage" value="<?= isset($_GET['id_bike']) ? htmlspecialchars($bikeData['img_path']) : $_POST['setImage'] ?>" required>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Добавить</button>
+        <button type="submit" class="btn btn-primary mt-4" name="btn_upd">Обновить данные</button>
     </form>
 
 </div>

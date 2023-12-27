@@ -13,12 +13,12 @@ $types = BikesTable::exportTypes();
 <div id="main-page" class="row justify-content-center">
     <div class="d-flex col-8 justify-content-between align-items-center mt-3">
         <?php if(isset($_GET['message'])){
-            if($_GET['message'] == 'addedSuccessfully')
+            if($_GET['message'] == 'addedSuccessfull')
                 echo "<div class='alert alert-success' role='alert'>Успешно добавлено</div>";
             elseif($_GET['message'] == 'deletedSuccessfully'){
                 echo "<div class='alert alert-success' role='alert'>Успешно удалено</div>";
             }
-            elseif($_GET['message'] == 'changedSuccessfully'){
+            elseif($_GET['message'] == 'updateSuccessfully'){
                 echo "<div class='alert alert-success' role='alert'>Успешно изменено</div>";
             }
             else{
@@ -47,7 +47,7 @@ $types = BikesTable::exportTypes();
         <?php foreach ($bikes as $bike):?>
             <tr class="row justify-content-center">
                 <td class="col-1 d-block text-start">
-                    <img height="90" src="<?=htmlspecialchars($bike['img_path'])?>">
+                    <img height="90" src="img/<?=htmlspecialchars($bike['img_path'])?>">
                 </td>
                 <td class="col-1"><?=htmlspecialchars($bike['name'])?></td>
                 <td class="col-1"><?=htmlspecialchars($bike['type'])?></td>
